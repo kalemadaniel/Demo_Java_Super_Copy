@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Demo_Java_Super_Copy" default="jar" basedir=".">
+  <target name="compile">
+    <mkdir dir="build"/>
+    <javac srcdir="src" destdir="build" source="1.8" target="1.8" encoding="UTF-8" includeantruntime="false"/>
+  </target>
+  <target name="jar" depends="compile">
+    <jar destfile="Demo_Java_Super_Copy.jar" basedir="build"><manifest><attribute name="Main-Class" value="supercopy.App"/></manifest></jar>
+  </target>
+  <target name="run" depends="jar"><java jar="Demo_Java_Super_Copy.jar" fork="true" failonerror="true"/></target>
+  <target name="test" depends="compile">
+    <mkdir dir="build-tests"/><mkdir dir="test-results"/>
+    <javac srcdir="test" destdir="build-tests" source="1.8" target="1.8" encoding="UTF-8" includeantruntime="false"><classpath path="build"/></javac>
+    <java classname="supercopy.EngineTest" fork="true" failonerror="true"><classpath path="build;build-tests"/><arg value="test-results"/></java>
+    <java classname="supercopy.ServerTest" fork="true" failonerror="true"><classpath path="build;build-tests"/><arg value="test-results"/></java>
+    <java classname="supercopy.UiTest" fork="true" failonerror="true"><classpath path="build;build-tests"/><arg value="test-results"/></java>
+  </target>
+  <target name="clean"><delete dir="build"/><delete dir="build-tests"/><delete file="Demo_Java_Super_Copy.jar"/></target>
+  <target name="rebuild" depends="clean,jar"/>
+</project>

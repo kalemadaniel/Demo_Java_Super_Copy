@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+ <type>org.netbeans.modules.ant.freeform</type>
+ <configuration>
+  <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+   <name>Demo_Java_Super_Copy</name>
+   <folders><source-folder><label>Sources Java</label><type>java</type><location>src</location></source-folder></folders>
+   <ide-actions>
+    <action name="build"><target>jar</target></action><action name="rebuild"><target>rebuild</target></action>
+    <action name="clean"><target>clean</target></action><action name="run"><target>run</target></action><action name="test"><target>test</target></action>
+   </ide-actions>
+   <export><type>jar</type><location>Demo_Java_Super_Copy.jar</location><build-target>jar</build-target><clean-target>clean</clean-target></export>
+   <view>
+    <items><source-folder style="packages"><label>Sources Java</label><location>src</location></source-folder><source-file><location>build.xml</location></source-file><source-file><location>LIRE-MOI.txt</location></source-file></items>
+    <context-menu><ide-action name="build"/><ide-action name="rebuild"/><ide-action name="clean"/><separator/><ide-action name="run"/><ide-action name="test"/></context-menu>
+   </view>
+  </general-data>
+  <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4"><compilation-unit><package-root>src</package-root><classpath mode="execute">build</classpath><built-to>build</built-to><built-to>Demo_Java_Super_Copy.jar</built-to><source-level>1.8</source-level></compilation-unit></java-data>
+ </configuration>
+</project>
